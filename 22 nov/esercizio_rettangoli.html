@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        #rectangle {
+            width: 20px;
+            height: 20px;
+            background-color: aqua;
+            position: relative;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="rectangle"></div>
+    <button id="button" onclick="click() ">Click me!</button>
+
+    <script>
+
+        window.click = function(){
+            var rect = document.createElement('div');
+            rect.id = 'rectangle';
+            rect.style.width = randomDim;
+            rect.style.height = randomDim;
+            rect.style.background = randomColor;
+            rect.style.position = absolute;
+
+            document.getElementsByTagName('body')[0].appendChild(rect);
+        }
+
+        function randomColor() {
+
+            var randNum = Math.floor(Math.random() * 6);
+
+            switch (randNum) {
+                case 0:
+                    return "red"
+                    break;
+                case 1:
+                    return "yellow"
+                    break;
+                case 2:
+                    return "green"
+                    break;
+                case 3:
+                    return "purple"
+                    break;
+                case 4:
+                    return "blue"
+                    break;
+                case 5:
+                    return "brown"
+                    break;
+                case 6:
+                    return "black"
+                    break;
+            }
+        }
+
+        function randomDim() {
+            return Math.floor((Math.random() * 400) + 50);
+        }
+
+
+    </script>
+
+</body>
+
+</html>

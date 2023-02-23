@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" alt="A cat">
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <title> Document </title>
+</head>
+
+<body>
+    <h1 id="title" style="color:green; background-color: black">hello world!</h1>
+   
+    <h2>hello world2</h2>
+    <h2 class="textblue">hello world3</h2>
+    <h2 id="textgreen">hello world4</h2>
+    
+    <a href="https://www.google.com">clicca qui</a>
+    <p> Questa è la <b>mia</b> <br> pagina web.</p>
+    <p class="textblue" style="color: yellow"> Questa è la mia</p>
+    <p> pagina web.</p>
+    <div>
+
+    </div>
+    <h2 class="textblue">altra intestazione</h2>
+   
+    <form action="">
+        <label for="">Nome</label>
+        <input type="text">
+
+        <label for="">Cognome</label>
+        <input type="text">
+
+        <label for="">Password</label>
+        <input type="password">
+
+        <label for="">Telefono</label>
+        <input type="number">
+    </form>
+    <img src="https://th.bing.com/th/id/OIP.hK5q86yFD58YrDXZUOyW-AHaE8?pid=ImgDet&rs=1">
+
+    <ul>
+        <li>nome</li>
+        <li>cognome</li>
+        <li>età</li>
+    </ul>
+
+    <ol>
+        <li>nome</li>
+        <li>cognome</li>
+        <li>età</li>
+    </ol>
+
+    <button id="btn-red">Red</button>
+
+    <script>
+        console.log("Perché JavaScript e non altro per il front-end?");
+        let a=5;
+        let b=6;
+        let c =a*b;
+        console.log(c);
+        alert("Ciao, sono un pop-up!")
+        
+        document.getElementById("btn-red").addEventListener("click",
+        function(){
+            document.getElementById("title").style.color="red";
+        })
+    </script>
+
+</body>
+</html>

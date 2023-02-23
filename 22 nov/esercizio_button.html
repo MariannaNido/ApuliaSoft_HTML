@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <title> Document </title>
+    </head>
+    <body>
+        
+        <p>
+        <h1 id="changing_title", style="color: black">Ciao, guarda come cambio colore!</h1>
+        </p>
+
+        <button id="button_red">Colora di rosso</button>
+        <button id="button_blue">Colora di blu</button>
+
+        <script>
+            document.getElementById("button_red").addEventListener("click",
+            function(){
+                document.getElementById("changing_title").style.color="red";
+            })
+
+            document.getElementById("button_blue").addEventListener("click",
+            function(){
+                document.getElementById("changing_title").style.color="blue";
+            })
+
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <h2>Form da compilare</h2>
+        <br>
+    </head>
+    <body>
+        <form id="myForm">
+            <label for="nomecognome">Nome e Cognome</label>
+            <input type="text" id="nomecognome">
+            <br>
+            <br>
+    
+            <label for="citta">Città</label>
+            <input type="text" id="citta">
+            <br>
+            <br>
+    
+            <label for="indirizzo">Indirizzo</label>
+            <input type="text" id="indirizzo">
+            <br>
+            <br>
+    
+            <label for="email"> e-Mail</label>
+            <input type="email" id="email">
+            <br>
+            <br>
+    
+            <label for="telefono">Numero di telefono</label>
+            <input type="tel" id="telefono">
+            <br>
+            <br>
+    
+            <label for="password">Password</label>
+            <input type="password" id="password">
+            <br>
+            <br>
+        </form>
+    
+        <button id="submit">Registrati</button>
+        <button id="reset">Cancella</button>
+
+        <script>
+            
+            document.getElementById("reset").addEventListener("click", 
+            function(){
+                document.getElementById("myForm").reset();
+            })
+
+            document.getElementById("submit").addEventListener("click", 
+            function(){
+
+                let alertPopUp = ""
+
+                let namesurname = document.getElementById("nomecognome").value;
+                if (namesurname==""){
+                    alertPopUp = alertPopUp + "Il campo <Nome e Cognome> è obbligatorio\n\n";
+                }
+
+                let emailPattern = /[\w]*\@[\w]*\.[\w]*/;
+                let emailVal = document.getElementById("email").value;
+                if(emailVal==""){
+                    alertPopUp = alertPopUp + "Il campo <e-Mail> è obbligatorio\n\n";
+                } else if(!emailPattern.test(emailVal)){
+                    alertPopUp = alertPopUp + "Attenzione, il campo <e-Mail> non è corretto\n\n";
+                }
+
+                let numVal = document.getElementById("telefono").value;
+                if(numVal==""){
+                    alertPopUp = alertPopUp + "Il campo <Numero di Telefono> è obbligatorio\n\n";
+                } else if(isNaN(numVal)){
+                    alertPopUp = alertPopUp + "Attenzione, il campo <Numero di Telefono> non è corretto\n\n";
+                }
+
+                let lower = /[a-z]/g;
+                let upper = /[A-Z]/g;
+                let numbers = /[0-9]/g;
+                let special = /\W/g;
+                let passVal = document.getElementById("password").value;
+                if(passVal==""){
+                    alertPopUp = alertPopUp + "Il campo <Password> è obbligatorio\n\n";
+                } else if (passVal.length<8){
+                    alertPopUp = alertPopUp + "Attenzione, il campo <Password> deve contenere almeno 8 caratteri\n\n";
+                } else if (!lower.test(passVal) || !upper.test(passVal) || !numbers.test(passVal) || !special.test(passVal)){
+                    alertPopUp = alertPopUp + "Attenzione, il campo <Password> deve contenere una maiuscola, una minuscola, un numero e un carattere speciale\n\n";
+                }
+
+                if (alertPopUp == ""){
+                    alertPopUp = alertPopUp + "Nome e Cognome: " + namesurname + "\n";
+                    alertPopUp = alertPopUp + "Città: " + document.getElementById("citta").value + "\n";
+                    alertPopUp = alertPopUp + "Indirizzo: " + document.getElementById("indirizzo").value + "\n";
+                    alertPopUp = alertPopUp + "e-Mail: " + emailVal + "\n";
+                    alertPopUp = alertPopUp + "Numero di Telefono: " + numVal + "\n";
+                    alertPopUp = alertPopUp + "Password: " + passVal + "\n";
+                }
+                    
+                alert(alertPopUp);
+              
+                
+            });
+
+        </script>
+    </body>
+</html>
